@@ -7,14 +7,14 @@
 
 (defun add-record (cd) (push cd *db*))
 
-(defun dunp-db ()
+(defun dump-db ()
   (dolist (cd *db*)
     (format t "~{~a:~10t~a~%~}~%" cd)))
 
 (defun prompt-read (prompt)
   (format *query-io* "~a: " prompt)
   (force-output *query-io*)
-  (read-line *query-ior*))
+  (read-line *query-io*))
 
 (defun prompt-for-cd ()
   (make-cd
